@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: linear-gradient(45deg, #0f0f0f, #1a1a1a, #0f0f0f);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .container {
+        position: relative;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+        transition: transform 0.3s ease;
+    }
+
+    .container:hover {
+        transform: scale(1.02);
+    }
+
+    #canvas1 {
+        border: 3px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        width: 500px;
+        height: 550px; 
+        box-shadow: 
+            0 0 20px rgba(255, 255, 255, 0.1),
+            inset 0 0 20px rgba(255, 255, 255, 0.05);
+        transition: border-color 0.3s ease;
+    }
+
+    .container:hover #canvas1 {
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .title {
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1.2em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
+    .controls {
+        position: absolute;
+        bottom: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 15px;
+    }
+
+    .control-btn {
+        padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .control-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+    }
+
+    /* Optional: Add a subtle glow animation */
+    @keyframes glow {
+        0% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); }
+        50% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.2); }
+        100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); }
+    }
+
+    #canvas1 {
+        animation: glow 4s infinite;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Particle Flow</h1>
+        <canvas id="canvas1"></canvas>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
